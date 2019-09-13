@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LDOE bunker code</string>
+    <string name="no_connection">No internet connection</string>
+    <string name="wait_a_second">Wait a second</string>
+    <string name="loading">Loading...</string>
+    <string name="alfa_code_for_today">Alfa\'s code for today</string>
+    <string name="retry">Retry</string>
 </resources>
