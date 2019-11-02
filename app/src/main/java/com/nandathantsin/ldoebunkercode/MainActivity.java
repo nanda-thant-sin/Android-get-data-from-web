@@ -3,8 +3,11 @@ package com.nandathantsin.ldoebunkercode;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -52,7 +56,30 @@ public class MainActivity extends AppCompatActivity {
         });
         new InternetCheck().execute();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
 
+        getMenuInflater().inflate(R.menu.menu_setting, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_delete:
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
+                return false;
+            case android.R.id.home:
+
+                super.onBackPressed();
+                return false;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
     class InternetCheck extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected void onPreExecute() {
@@ -121,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                return null;
             }
 
             return arrayList;
@@ -129,7 +157,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<String> arrayList) {
             super.onPostExecute(arrayList);
-            code.setText(arrayList.get(month));
+            if(arrayList==null){
+                heading.setVisibility(View.GONE);
+                code.setVisibility(View.GONE);
+                no_connection.setVisibility(View.VISIBLE);
+                btn_retry.setVisibility(View.VISIBLE);
+            }
+            else {
+                code.setText(arrayList.get(month));
+            }
             progressDialog.dismiss();
         }
     }

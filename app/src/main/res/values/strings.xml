@@ -5,4 +5,6 @@
     <string name="loading">Loading...</string>
     <string name="alfa_code_for_today">Alfa\'s code for today</string>
     <string name="retry">Retry</string>
+    <string name="theme_pref_key">theme_pref</string>
+    <string name="action_setting">Setting</string>
 </resources>
