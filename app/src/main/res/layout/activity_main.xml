@@ -30,6 +30,39 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/wrong_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wrong_code"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/code" />
+    <LinearLayout
+        android:id="@+id/twoMoreCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/wrong_code"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/code">
+        <TextView
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/otherCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/othercode"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/code"
         android:layout_width="wrap_content"

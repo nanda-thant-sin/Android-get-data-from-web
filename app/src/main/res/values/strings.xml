@@ -7,4 +7,7 @@
     <string name="retry">Retry</string>
     <string name="theme_pref_key">theme_pref</string>
     <string name="action_setting">Setting</string>
+    <string name="wrong_code">If code is wrong, retry</string>
+    <string name="other">Yesterday Code: \nTomorrow Code: </string>
+    <string name="othercode">-\n-</string>
 </resources>
