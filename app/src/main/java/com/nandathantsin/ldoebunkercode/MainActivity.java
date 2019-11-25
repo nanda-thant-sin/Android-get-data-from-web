@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
                 prefs.edit().putString("codes", str.toString()).commit();
                 String savedString = prefs.getString("codes", "");
                 String[] codes = savedString.split(",");
-                code.setText(arrayList.get(day));
+                code.setText(codes[day]);
                 String yesterday;
                 String tomorrow;
                 if(day==1){
